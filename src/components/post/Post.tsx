@@ -9,7 +9,7 @@ export const Post = () => {
         <div className="postTop">
           <div className="postTopLeft">
             <img
-              src="./assets/person/1.jepg"
+              src="./assets/person/1.jpeg"
               alt=""
               className="postProfileImg"
             />
@@ -22,7 +22,7 @@ export const Post = () => {
         </div>
 
         <span className="postText">SNSを自作中です。</span>
-        <img src="./assets/person/1.jepg" alt="" className="postImg" />
+        <img src="./assets/post/1.jpeg" alt="" className="postImg" />
       </div>
       <div className="postBottom">
         <div className="postBottomLeft">

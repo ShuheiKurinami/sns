@@ -28,19 +28,23 @@ type PostProps = {
 };
 
 export const Post = ({ post }: PostProps) => {
-  const user = Users.filter((user) => user.id === 1);
-  console.log(user);
+  // const user = Users.filter((user) => user.id === 1);
+  // console.log(user[0].username);
   return (
     <div className="post">
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
             <img
-              src="./assets/person/1.jpeg"
+              src={
+                Users.filter((user) => user.id === post.id)[0].profilePicture
+              }
               alt=""
               className="postProfileImg"
             />
-            <span className="postUsername">shinCode</span>
+            <span className="postUsername">
+              {Users.filter((user) => user.id === post.id)[0].username}
+            </span>
             <span className="postDate">{post.date}</span>
           </div>
           <div className="postTopRight">

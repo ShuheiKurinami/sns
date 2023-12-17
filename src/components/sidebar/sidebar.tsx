@@ -45,9 +45,7 @@ export const Sidebar = () => {
           </li>
         </ul>
         <hr className="sidebarHr" />
-        <ul className="sidebarFriendList">
-          <CloseFrined />
-        </ul>
+        <ul className="sidebarFriendList">{/* <CloseFrined /> */}</ul>
       </div>
     </div>
   );

@@ -46,30 +46,7 @@ export const Sidebar = () => {
         </ul>
         <hr className="sidebarHr" />
         <ul className="sidebarFriendList">
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/2.jpeg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFriendName">shin Code</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/3.jpeg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFriendName">shin Code</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/4.jpeg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFriendName">shin Code</span>
-          </li>
+          <CloseFrined />
         </ul>
       </div>
     </div>

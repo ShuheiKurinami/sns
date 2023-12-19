@@ -9,6 +9,8 @@ import {
 import Notifications from "@mui/icons-material/Notifications";
 import React from "react";
 import "./Sidebar.css";
+import { Users } from "../../dummyData";
+import { CloseFriend } from "../closeFriend/CloseFriend";
 
 export const Sidebar = () => {
   return (
@@ -45,7 +47,11 @@ export const Sidebar = () => {
           </li>
         </ul>
         <hr className="sidebarHr" />
-        <ul className="sidebarFriendList">{/* <CloseFrined /> */}</ul>
+        <ul className="sidebarFriendList">
+          {Users.map((user) => (
+            <CloseFriend user={user} key={user.id} />
+          ))}
+        </ul>
       </div>
     </div>
   );

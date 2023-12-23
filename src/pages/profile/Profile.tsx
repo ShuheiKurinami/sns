@@ -14,9 +14,13 @@ export const Profile = () => {
         <div className="profileRight">
           <div className="profileRightTop">
             <div className="profileCover">
-              <img src="assets/post/3.jpeg" alt="" className="profileCover" />
               <img
-                src="assets/person/7.jpeg"
+                src="assets/post/3.jpeg"
+                alt=""
+                className="profileCoverImg"
+              />
+              <img
+                src="assets/person/1.jpeg"
                 alt=""
                 className="profileUserImg"
               />

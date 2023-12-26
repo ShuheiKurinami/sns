@@ -3,10 +3,20 @@ import "./Rightbar.css";
 import { Users } from "../../dummyData";
 import { Online } from "../online/Online";
 
-export const Rightbar = () => {
-  return (
-    <div className="rightbar">
-      <div className="rightbarWrapper">
+type profile = {
+  id?: Number;
+  profilePicture?: String;
+  username?: String;
+};
+
+type profileProps = {
+  profile?: profile | undefined;
+};
+
+export const Rightbar = ({ profile }: profileProps) => {
+  const HomeRightbar = () => {
+    return (
+      <>
         <div className="eventContainer">
           <img src="assets/star.png" alt="" className="starImg" />
           <span className="eventText">
@@ -39,6 +49,17 @@ export const Rightbar = () => {
           className="rightbarPromotionImg"
         />
         <p className="promotionName">ShinCode株式会社</p>
+      </>
+    );
+  };
+
+  const ProfileRightbar = () => {
+    return <>profileのrightbarです。</>;
+  };
+  return (
+    <div className="rightbar">
+      <div className="rightbarWrapper">
+        {profile ? <ProfileRightbar /> : <HomeRightbar />}
       </div>
     </div>
   );

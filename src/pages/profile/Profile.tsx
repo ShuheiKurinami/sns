@@ -3,6 +3,7 @@ import { Topbar } from "../../components/Topbar/Topbar";
 import { Sidebar } from "../../components/sidebar/sidebar";
 import { Timeline } from "../../components/timeline/Timeline";
 import { Rightbar } from "../../components/rightbar/Rightbar";
+import { Users } from "../../dummyData";
 import "./Profile.css";
 
 export const Profile = () => {
@@ -32,7 +33,7 @@ export const Profile = () => {
           </div>
           <div className="profileRightBottom">
             <Timeline />
-            <Rightbar />
+            <Rightbar profile={Users[0]} />
           </div>
         </div>
       </div>

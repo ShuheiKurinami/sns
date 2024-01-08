@@ -31,9 +31,8 @@ export default function Register() {
               className="loginInput"
               placeholder="確認用パスワード"
             />
-            <button className="loginButton">ログイン</button>
-            <span className="loginForgot">パスワードを忘れた方へ</span>
-            <button className="loginRegisterButton">アカウント作成</button>
+            <button className="loginButton">サインアップ</button>
+            <button className="loginRegisterButton">ログイン</button>
           </div>
         </div>
       </div>

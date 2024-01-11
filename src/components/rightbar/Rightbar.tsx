@@ -14,16 +14,17 @@ type profileProps = {
 };
 
 export const Rightbar = ({ profile }: profileProps) => {
+  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
   const HomeRightbar = () => {
     return (
       <>
         <div className="eventContainer">
-          <img src="assets/star.png" alt="" className="starImg" />
+          <img src={PUBLIC_FOLDER + "/star.png"} alt="" className="starImg" />
           <span className="eventText">
             <b>フォロワー限定</b>イベント開催中！
           </span>
         </div>
-        <img src="assets/ad.jpeg" alt="" className="eventImg" />
+        <img src={PUBLIC_FOLDER + "/ad.jpeg"} alt="" className="eventImg" />
         <h4 className="rightbarTitle">オンラインの友達</h4>
         <ul className="rightbarFriendList">
           {Users.map((user) => (
@@ -32,19 +33,19 @@ export const Rightbar = ({ profile }: profileProps) => {
         </ul>
         <p className="promotionTitle">プロモーション広告</p>
         <img
-          src="assets/promotion/promotion1.jpeg"
+          src={PUBLIC_FOLDER + "/promotion/promotion1.jpeg"}
           alt=""
           className="rightbarPromotionImg"
         />
         <p className="promotionName">ショッピング</p>
         <img
-          src="assets/promotion/promotion2.jpeg"
+          src={PUBLIC_FOLDER + "/promotion/promotion2.jpeg"}
           alt=""
           className="rightbarPromotionImg"
         />
         <p className="promotionName">カーショップ</p>
         <img
-          src="assets/promotion/promotion1.jpeg"
+          src={PUBLIC_FOLDER + "/promotion/promotion1.jpeg"}
           alt=""
           className="rightbarPromotionImg"
         />
@@ -66,7 +67,7 @@ export const Rightbar = ({ profile }: profileProps) => {
           <div className="rightbarFollowings">
             <div className="rightbarFollowing">
               <img
-                src="assets/person/1.jpeg"
+                src={PUBLIC_FOLDER + "/person/1.jpeg"}
                 alt=""
                 className="rightbarFollowingImg"
               />
@@ -74,7 +75,7 @@ export const Rightbar = ({ profile }: profileProps) => {
             </div>
             <div className="rightbarFollowing">
               <img
-                src="assets/person/2.jpeg"
+                src={PUBLIC_FOLDER + "/person/2.jpeg"}
                 alt=""
                 className="rightbarFollowingImg"
               />
@@ -82,7 +83,7 @@ export const Rightbar = ({ profile }: profileProps) => {
             </div>
             <div className="rightbarFollowing">
               <img
-                src="assets/person/3.jpeg"
+                src={PUBLIC_FOLDER + "/person/3.jpeg"}
                 alt=""
                 className="rightbarFollowingImg"
               />
@@ -90,7 +91,7 @@ export const Rightbar = ({ profile }: profileProps) => {
             </div>
             <div className="rightbarFollowing">
               <img
-                src="assets/person/4.jpeg"
+                src={PUBLIC_FOLDER + "/person/4.jpeg"}
                 alt=""
                 className="rightbarFollowingImg"
               />
@@ -98,7 +99,7 @@ export const Rightbar = ({ profile }: profileProps) => {
             </div>
             <div className="rightbarFollowing">
               <img
-                src="assets/person/5.jpeg"
+                src={PUBLIC_FOLDER + "/person/5.jpeg"}
                 alt=""
                 className="rightbarFollowingImg"
               />

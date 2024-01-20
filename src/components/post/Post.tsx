@@ -4,31 +4,32 @@ import "./Post.css";
 import axios from "axios";
 // import { Users } from "../../dummyData";
 
-type posts =
-  | {
-      id: number;
-      desc: string;
-      photo: string;
-      date: string;
-      userId: number;
-      like: number;
-      comment: number;
-    }
-  | {
-      id: number;
-      photo: string;
-      date: string;
-      userId: number;
-      like: number;
-      comment: number;
-      desc?: undefined;
-    };
+type posts = {
+  id: number;
+  desc?: string;
+  photo?: string;
+  date: string;
+  userId: number;
+  like: number;
+  comment: number;
+  // PostInterface から必要なプロパティを追加
+  username: string;
+  profilePicture?: string;
+  email: string;
+  password: string;
+  coverPicture: string;
+  followers: any;
+  followings: any;
+  isAdmin: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+};
 
 type PostProps = {
   post: posts;
 };
 
-interface Post {
+interface PostInterface {
   id: string;
   username: string;
   email: string;
@@ -42,12 +43,12 @@ interface Post {
   updatedAt: Date;
 }
 
-export const Post = ({ post }: any) => {
+export const Post = ({ post }: PostProps) => {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
   const [like, setLike] = useState(post.like);
   const [isLiked, setIsLiked] = useState(false);
 
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState<PostInterface | null>(null);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -56,7 +57,7 @@ export const Post = ({ post }: any) => {
       setUser(response.data);
     };
     fetchUser();
-  }, []);
+  }, [post.userId]);
 
   const handleLike = () => {
     setLike(isLiked ? like - 1 : like + 1);
@@ -67,8 +68,12 @@ export const Post = ({ post }: any) => {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            {/* <img src={user.profilePicture} alt="" className="postProfileImg" /> */}
-            {/* <span className="postUsername">{user.username}</span> */}
+            <img
+              src={user?.profilePicture || "/person/noAvatar.png"}
+              alt=""
+              className="postProfileImg"
+            />
+            <span className="postUsername">{user?.username}</span>
             <span className="postDate">{post.date}</span>
           </div>
           <div className="postTopRight">
@@ -77,7 +82,7 @@ export const Post = ({ post }: any) => {
         </div>
 
         <span className="postText">{post.desc}</span>
-        <img src={PUBLIC_FOLDER + post.photo} alt="" className="postImg" />
+        <img src={post.photo} alt="" className="postImg" />
       </div>
       <div className="postBottom">
         <div className="postBottomLeft">

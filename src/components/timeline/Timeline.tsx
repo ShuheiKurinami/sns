@@ -27,7 +27,7 @@ export const Timeline = () => {
       const response = await axios.get(
         "/posts/timeline/655896ef9873be8e5031404a"
       );
-      // console.log(response);
+      console.log(response);
       setPosts(response.data);
     };
     fetchPosts();

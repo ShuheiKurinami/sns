@@ -13,20 +13,11 @@ type posts = {
   like: number;
   comment: number;
   // PostInterface から必要なプロパティを追加
-  username: string;
-  profilePicture?: string;
-  email: string;
-  password: string;
-  coverPicture: string;
-  followers: any;
-  followings: any;
-  isAdmin: boolean;
-  createdAt: Date;
-  updatedAt: Date;
 };
 
 type PostProps = {
-  post: posts;
+  // post: posts;
+  post: any;
 };
 
 interface PostInterface {
